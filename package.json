@@ -1,0 +1,11 @@
+{
+  "name": "react-em-2horas",
+  "version": "1.0.0",
+  "description": "Curso de react em 2 horas do Matheus Battisti",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "João Victor Carvalho de Souza",
+  "license": "ISC"
+}
