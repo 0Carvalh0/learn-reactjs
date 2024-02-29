@@ -4,6 +4,7 @@ import MeuComponente from "./components/MeuComponente";
 import Subtitulo from "./components/Subtitulo";
 import Paragrafo from "./components/Paragrafo";
 import Lista from "./components/Lista";
+import ExemploRenderizacao from "./components/ExemploRenderizacao";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Subtitulo />
       <Paragrafo />
       <Lista />
+      <ExemploRenderizacao />
     </main>
   );
 }
