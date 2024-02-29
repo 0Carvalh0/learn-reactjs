@@ -1,10 +1,5 @@
 function MeuComponente() {
-    return (
-        <div>
-            <h1>Meu Primeiro Componente</h1>
-            <p>Olá Mundo</p>
-        </div>
-    )
+  return <h1>Meu Primeiro Componente</h1>;
 }
 
-export default MeuComponente
+export default MeuComponente;
