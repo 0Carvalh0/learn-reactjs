@@ -1,8 +1,13 @@
-function Titulo({ nome, paragrafo, cor }) {
+import { useState } from "react";
+
+function Titulo({cor}) {
+    const [texto, setTexto] = useState("Texto Inicial")
+    const [novoTexto, setNovoTexto] = useState("")
   return (
     <div>
-      <h1 style={{color: cor}}>Oi eu sou {nome ? nome : "Fulano"}</h1>
-      {paragrafo ? <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid esse id dolorem deleniti molestiae libero maiores. Delectus magni totam similique pariatur reiciendis, hic natus dolor, quas ipsa exercitationem alias consectetur.</p> : <p></p>}
+      <h1 style={{color: cor}}>Oi eu sou Fulano {texto}</h1>
+      <input type="text" value={novoTexto} onChange={(e) => {setNovoTexto(e.target.value)}} />
+      <button onClick={() => {setTexto(novoTexto)}}>Mudar</button>
     </div>
   );
 }
