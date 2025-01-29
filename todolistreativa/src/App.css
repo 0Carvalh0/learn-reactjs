@@ -1,0 +1,99 @@
+.App {
+  width: 500px;
+
+  background-color: #394049;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.App h2 {
+  text-align: center;
+}
+
+.todo__List li {
+  all: unset;
+}
+
+.todo__Header {
+  padding: 0.5rem;
+  border-bottom: 1px solid #2c3035;
+  text-align: center;
+}
+
+.todo__Form {
+  padding: 1em;
+  margin: 0 2em;
+  border-bottom: 1px solid #2c3035;
+}
+
+.form__Group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+.form__Group label {
+  font-weight: bold;
+  font-size: 0.7em;
+  margin-bottom: 0.5em;
+}
+
+.form__Group input {
+  padding: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #222;
+  background-color: #2c3035;
+  color: #dfdfdf;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #222;
+  border-radius: 5px;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.todo__List {
+  padding: 0 1em 2em;
+  margin: 1em 2em;
+}
+
+.todo__List p {
+  text-align: center;
+}
+
+.todo__Item {
+  border-bottom: 1px solid #333;
+  padding: 1em 0;
+}
+
+.todo__Item h3 {
+  margin-bottom: .5em;
+}
+
+.todo__Item .todo__Title--done {
+  text-decoration: line-through;
+  color: rgb(240, 98, 146);
+}
+
+.todo__Item p {
+  text-align: left;
+  font-style: italic;
+  font-size: .7em;
+  margin-bottom: 1.5em;
+}
+
+.todo__Item svg {
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-right: 1em;
+  transition: .5s;
+}
+
+.todo__Item svg:hover {
+  color: rgb(240, 98, 146);
+}
