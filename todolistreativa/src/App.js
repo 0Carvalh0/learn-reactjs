@@ -32,7 +32,7 @@ function App() {
     e.preventDefault();
 
     const newTodo = {
-      id: Math.random(),
+      id: Math.floor(Math.random() * 1000),
       title,
       time,
       done: false,
