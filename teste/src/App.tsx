@@ -1,11 +1,11 @@
 import MVlist from "./components/MVlist";
 
 function App() {
-  return (
-    <>
-      <MVlist></MVlist>
-    </>
-  );
+    return (
+        <>
+            <MVlist />
+        </>
+    );
 }
 
 export default App;
