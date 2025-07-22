@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 
+import "./MVlist.css";
+
 import MVcard from "./MVcard";
 
 interface Movie {
     id: number;
-    title: string;
-    overview: string;
     poster_path?: string;
+    title: string;
+    release_date: string;
+    vote_average: number;
 }
 
 const readToken = import.meta.env.VITE_READ_TOKEN;
@@ -40,8 +43,8 @@ function MVlist() {
 
     return (
         <>
-            <h1>Lista de Filmes:</h1>
-            <div className="container">
+            <h1 className="container__title">Populares:</h1>
+            <div className="mv__list">
                 {movies.map((movie) => (
                     <MVcard key={movie.id} {...movie} />
                 ))}

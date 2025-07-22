@@ -1,0 +1,13 @@
+.container__title {
+    color: var(--color-accent);
+    text-align: center;
+}
+
+.mv__list {
+    display: flex;
+    flex-flow: row wrap;
+
+    gap: 2rem;
+
+    padding: 1rem;
+}

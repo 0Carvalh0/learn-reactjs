@@ -8,17 +8,18 @@
 :root {
     --color-bg: #000814;
     --color-surface: #001d3d;
-    --color-accent: #003566;
+    --color-accent: #004c93;
     --color-warning: #ffc300;
     --color-highlight: #ffd60a;
 }
 
 body,
 html {
+    display: flex;
+    flex-flow: column nowrap;
+
+    padding: 0.5rem;
+
     background-color: var(--color-bg);
     color: #fff;
-}
-
-li {
-    all: unset;
 }
