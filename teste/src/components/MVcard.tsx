@@ -1,24 +1,28 @@
 import { IconContext } from "react-icons";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 import "./MVcard.css";
 
 interface Movie {
+    id: number;
     poster_path?: string;
     title: string;
     release_date: string;
     vote_average: number;
 }
 
-const MVcard = ({ poster_path, title, release_date, vote_average }: Movie) => {
+const MVcard = ({ id, poster_path, title, release_date, vote_average }: Movie) => {
     return (
         <div className="mv__card">
             {poster_path && (
-                <img
-                    className="mv__img"
-                    src={`https://image.tmdb.org/t/p/w200${poster_path}`}
-                    alt={title}
-                />
+                <Link to={`/more/${id}`}>
+                    <img
+                        className="mv__img"
+                        src={`https://image.tmdb.org/t/p/w200${poster_path}`}
+                        alt={title}
+                    />
+                </Link>
             )}
             <h2 className="mv__title">{title}</h2>
             <div className="mv__description">
