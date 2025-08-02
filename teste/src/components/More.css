@@ -1,0 +1,37 @@
+.button__back {
+    all: unset;
+
+    position: absolute;
+
+    padding: 1rem;
+    border-radius: 999px;
+
+    background-color: var(--color-surface);
+}
+
+.mv__details {
+    max-width: 1200px;
+    display: flex;
+
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.details__img {
+    border-radius: 10px;
+}
+
+.mv__details > div {
+    display: flex;
+    flex-flow: column wrap;
+
+    gap: 1rem;
+}
+
+.details__title {
+    color: var(--color-highlight);
+}
+
+.details__overview {
+    text-align: justify;
+}

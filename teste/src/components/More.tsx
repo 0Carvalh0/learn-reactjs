@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { FaHome } from "react-icons/fa";
+import { useNavigate, useParams } from "react-router-dom";
+
+import "./More.css";
 
 const readToken = import.meta.env.VITE_READ_TOKEN;
 const options = {
@@ -22,6 +25,7 @@ interface MovieDetails {
 
 const More = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const [movie, setMovie] = useState<MovieDetails | null>(null);
 
     useEffect(() => {
@@ -39,29 +43,37 @@ const More = () => {
     if (!movie) return <p>Carregando detalhes do filme...</p>;
 
     return (
-        <div className="movie-details">
-            <h1>{movie.title}</h1>
-            <img
-                src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
-                alt={movie.title}
-            />
-            <p>
-                <strong>Lançamento:</strong> {movie.release_date}
-            </p>
-            <p>
-                <strong>Duração:</strong> {movie.runtime} min
-            </p>
-            <p>
-                <strong>Nota:</strong> {movie.vote_average.toFixed(1)}
-            </p>
-            <p>
-                <strong>Gêneros:</strong>{" "}
-                {movie.genres.map((g) => g.name).join(", ")}
-            </p>
-            <p>
-                <strong>Descrição:</strong> {movie.overview}
-            </p>
-        </div>
+        <>
+            <button className="button__back" onClick={() => navigate("/")}>
+                <FaHome />
+            </button>
+            <div className="mv__details">
+                <img
+                    src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`}
+                    alt={movie.title}
+                    className="details__img"
+                />
+                <div>
+                    <h1 className="details__title">{movie.title}</h1>
+                    <p className="details__release-date">
+                        <strong>Lançamento:</strong> {movie.release_date}
+                    </p>
+                    <p className="details__runtime">
+                        <strong>Duração:</strong> {movie.runtime} min
+                    </p>
+                    <p className="details__vote-average">
+                        <strong>Nota:</strong> {movie.vote_average.toFixed(1)}
+                    </p>
+                    <p className="details__genres">
+                        <strong>Gêneros:</strong>{" "}
+                        {movie.genres.map((g) => g.name).join(", ")}
+                    </p>
+                    <p className="details__overview">
+                        <strong>Descrição:</strong> {movie.overview}
+                    </p>
+                </div>
+            </div>
+        </>
     );
 };
 
