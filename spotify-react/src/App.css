@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+/* VARIÁVEIS */
+
+:root {
+  /* FONT: */
+  --font-default: "DM Sans", sans-serif;
+
+  /* COLORS: */
+  --color1: #b3b3b3;
+  --color2: #878787;
+  --color3: #242424;
+  --color4: #121212;
+  
+  --bg-icon: #131313;
+  --bg-arrow-color: rgba(0,0,07);
+}
+
+body {
+  background-color: #000;
+}
