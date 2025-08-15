@@ -2,6 +2,7 @@ import "./App.css";
 import UsarEfeito from "./Hooks/UsarEfeito";
 import UsarEstado from "./Hooks/UsarEstado";
 import UsarRef from "./Hooks/UsarRef";
+import UsarRedutor from "./Hooks/UsarRedutor";
 
 function App() {
     return (
@@ -9,6 +10,7 @@ function App() {
             <UsarEstado />
             <UsarEfeito />
             <UsarRef />
+            <UsarRedutor />
         </>
     );
 }
