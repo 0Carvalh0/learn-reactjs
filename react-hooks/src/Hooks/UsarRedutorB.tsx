@@ -1,14 +1,13 @@
 import { useReducer, useState } from "react";
 
 type Task = {
-    name: string,
-    isCompleted: boolean
-}
+    name: string;
+    isCompleted: boolean;
+};
 
-type Action = {
-    type: "add-task";
-    payload: string
-}
+type Action =
+    | { type: "add-task"; payload: string }
+    | { type: "toggle-task"; payload: number };
 
 const reducer = (
     state: { tasks: Task[]; tasksCount: number },
@@ -17,11 +16,21 @@ const reducer = (
     switch (action.type) {
         case "add-task":
             return {
+                ...state,
                 tasks: [
                     ...state.tasks,
                     { name: action.payload, isCompleted: false },
                 ],
                 tasksCount: state.tasksCount + 1,
+            };
+        case "toggle-task":
+            return {
+                ...state,
+                tasks: state.tasks.map((item, index) =>
+                    index === action.payload
+                        ? { ...item, isCompleted: !item.isCompleted }
+                        : item
+                ),
             };
         default:
             return state;
@@ -54,7 +63,22 @@ const UsarRedutorB = () => {
             <p>Quant. de Tasks: {state.tasksCount}</p>
             <div>
                 {state.tasks.map((task, index) => (
-                    <p key={index}>{task.name}</p>
+                    <p
+                        key={index}
+                        onClick={() =>
+                            dispatch({
+                                type: "toggle-task",
+                                payload: index,
+                            })
+                        }
+                        style={{
+                            textDecoration: task.isCompleted
+                                ? "line-through"
+                                : "none",
+                        }}
+                    >
+                        {task.name}
+                    </p>
                 ))}
             </div>
         </>
