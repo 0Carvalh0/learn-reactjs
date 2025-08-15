@@ -3,6 +3,7 @@ import UsarEfeito from "./Hooks/UsarEfeito";
 import UsarEstado from "./Hooks/UsarEstado";
 import UsarRef from "./Hooks/UsarRef";
 import UsarRedutor from "./Hooks/UsarRedutor";
+import UsarRedutorB from "./Hooks/UsarRedutorB";
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
             <UsarEfeito />
             <UsarRef />
             <UsarRedutor />
+            <UsarRedutorB />
         </>
     );
 }
