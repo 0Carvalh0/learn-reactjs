@@ -4,6 +4,7 @@ import UsarEstado from "./Hooks/UsarEstado";
 import UsarRef from "./Hooks/UsarRef";
 import UsarRedutor from "./Hooks/UsarRedutor";
 import UsarRedutorB from "./Hooks/UsarRedutorB";
+import UsarMemo from "./Hooks/UsarMemo";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
             <UsarRef />
             <UsarRedutor />
             <UsarRedutorB />
+            <UsarMemo />
         </>
     );
 }
