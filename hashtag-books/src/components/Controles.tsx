@@ -1,12 +1,14 @@
 type ControlesProps = {
     isPlaying: boolean;
     setPlayPause: () => void;
+    retrocederFaixa: () => void;
+    avancarFaixa: () => void;
 };
 
-const Controles = ({ isPlaying, setPlayPause }: ControlesProps) => {
+const Controles = ({ isPlaying, setPlayPause, retrocederFaixa, avancarFaixa }: ControlesProps) => {
     return (
         <div className="caixa-botoes">
-            <button>
+            <button onClick={retrocederFaixa}>
                 <i className="bi bi-skip-start"></i>
             </button>
             <button>
@@ -22,7 +24,7 @@ const Controles = ({ isPlaying, setPlayPause }: ControlesProps) => {
             <button>
                 <i className="bi bi-arrow-clockwise"></i>
             </button>
-            <button>
+            <button onClick={avancarFaixa}>
                 <i className="bi bi-skip-end"></i>
             </button>
         </div>
