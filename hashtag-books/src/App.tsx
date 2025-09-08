@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 
+import livro from "./assets/audio/livro";
 import coverImg from "./assets/bras_cubas.jpeg";
 import livro from "./assets/audio/livro";
 
