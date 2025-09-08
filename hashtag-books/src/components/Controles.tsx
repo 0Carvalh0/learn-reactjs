@@ -1,9 +1,9 @@
 type ControlesProps = {
     isPlaying: boolean;
-    setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
+    setPlayPause: () => void;
 };
 
-const Controles = ({isPlaying, setIsPlaying} : ControlesProps) => {
+const Controles = ({ isPlaying, setPlayPause }: ControlesProps) => {
     return (
         <div className="caixa-botoes">
             <button>
@@ -12,8 +12,12 @@ const Controles = ({isPlaying, setIsPlaying} : ControlesProps) => {
             <button>
                 <i className="bi bi-arrow-counterclockwise"></i>
             </button>
-            <button onClick={() => setIsPlaying(!isPlaying)}>
-                <i className={`bi bi-${isPlaying ? "pause" : "play"}-circle-fill`}></i>
+            <button onClick={setPlayPause}>
+                <i
+                    className={`bi bi-${
+                        isPlaying ? "pause" : "play"
+                    }-circle-fill`}
+                ></i>
             </button>
             <button>
                 <i className="bi bi-arrow-clockwise"></i>
