@@ -7,6 +7,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 import Capa from "./components/Capa";
 import Controles from "./components/Controles";
+import Progresso from "./components/Progresso";
 import GerenciadorCapitulo from "./components/GerenciadorCapitulo";
 import SeletorCapitulos from "./components/SeletorCapitulos";
 
@@ -25,6 +26,8 @@ function App() {
     const [isPlaying, setIsPlaying] = useState(false);
     const [capituloAtual, setCapituloAtual] = useState(0);
     const refAudioTag = useRef<HTMLAudioElement | null>(null);
+    const [tempoTotal, setTempoTotal] = useState<number>(0);
+    const [tempoAtual, setTempoAtual] = useState<number>(0);
 
     useEffect(() => {
         if (isPlaying) {
@@ -77,9 +80,13 @@ function App() {
 
             <SeletorCapitulos capituloId={capituloAtual + 1} />
 
+            <Progresso tempoTotal={tempoTotal} tempoAtual={tempoAtual} />
+
             <GerenciadorCapitulo
                 audioSrc={bookInfos.capitulos[capituloAtual]}
                 reference={refAudioTag}
+                setTempoTotal={setTempoTotal}
+                setTempoAtual={setTempoAtual}
             />
 
             <Controles
