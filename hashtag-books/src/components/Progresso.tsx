@@ -1,9 +1,11 @@
 interface ProgressoProps {
-    tempoTotal: number;
-    tempoAtual: number;
+  tempoTotal: number;
+  tempoAtual: number;
+  reference: React.RefObject<HTMLDivElement | null>;
+  avancarPara: (e: React.MouseEvent) => void;
 }
 
-const Progresso = ({ tempoTotal, tempoAtual }: ProgressoProps) => {
+const Progresso = ({ tempoTotal, tempoAtual, reference, avancarPara }: ProgressoProps) => {
     const formatarTempo = (segundos: number) => {
         if (!segundos || isNaN(segundos)) return "00:00";
 
@@ -15,20 +17,26 @@ const Progresso = ({ tempoTotal, tempoAtual }: ProgressoProps) => {
     };
 
     return (
-        <section className="container-progresso">
-            <div className="progresso-total">
-                <div className="progresso-atual" style={{
-                    width: `${(tempoAtual * 100) / tempoTotal}%`
-                }}></div>
-                <div className="marcador-posicao" style={{
-                    left: `${(tempoAtual * 100) / tempoTotal}%`
-                }}></div>
-            </div>
-            <div className="metricas-tempo">
-                <p>{formatarTempo(tempoAtual)}</p>
-                <p>{formatarTempo(tempoTotal)}</p>
-            </div>
-        </section>
+      <section className="container-progresso">
+        <div className="progresso-total" ref={reference} onClick={avancarPara}>
+          <div
+            className="progresso-atual"
+            style={{
+              width: `${(tempoAtual * 100) / tempoTotal}%`,
+            }}
+          ></div>
+          <div
+            className="marcador-posicao"
+            style={{
+              left: `${(tempoAtual * 100) / tempoTotal}%`,
+            }}
+          ></div>
+        </div>
+        <div className="metricas-tempo">
+          <p>{formatarTempo(tempoAtual)}</p>
+          <p>{formatarTempo(tempoTotal)}</p>
+        </div>
+      </section>
     );
 };
 
