@@ -25,7 +25,7 @@ interface IBookInfos {
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [capituloAtual, setCapituloAtual] = useState(0);
-  const refAudioTag = useRef<HTMLAudioElement | null>(null);
+  const refAudioTag = useRef<HTMLAudioElement>(null);
   const [tempoTotal, setTempoTotal] = useState<number>(0);
   const [tempoAtual, setTempoAtual] = useState<number>(0);
   const barraProgresso = useRef<HTMLDivElement | null>(null);
@@ -34,7 +34,7 @@ function App() {
     if (isPlaying) {
       refAudioTag.current?.play();
     }
-  }, [capituloAtual]);
+  }, [capituloAtual, isPlaying]);
 
   const bookInfos: IBookInfos = {
     nome: "Memórias Póstumas de Brás Cubas",
